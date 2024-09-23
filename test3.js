@@ -1,7 +1,7 @@
 const title = document.getElementById("title");
-const postsBtn = document.getElementById("posts-btn");
-const photosBtn = document.getElementById("photos-btn");
-const albumsBtn = document.getElementById("albums-btn");
+const postsId = document.getElementById("postsid");
+const photosId = document.getElementById("photosid");
+const albumsId = document.getElementById("albumsid");
 const dataList = document.getElementById("data-list");
 
 let activeButton = "posts";
@@ -25,26 +25,26 @@ function highlightButton(button) {
   button.classList.add("active");
 }
 
-postsBtn.addEventListener("click", () => {
+postsId.addEventListener("click", () => {
   activeButton = "posts";
-  highlightButton(postsBtn);
+  highlightButton(postsId);
   fetchData("posts");
   title.textContent = "Type: " + activeButton;
 });
 
-photosBtn.addEventListener("click", () => {
+photosId.addEventListener("click", () => {
   activeButton = "photos";
-  highlightButton(photosBtn);
+  highlightButton(photosId);
   fetchData("photos");
   title.textContent = "Type: " + activeButton;
 });
 
-albumsBtn.addEventListener("click", () => {
+albumsId.addEventListener("click", () => {
   activeButton = "albums";
-  highlightButton(albumsBtn);
+  highlightButton(albumsId);
   fetchData("albums");
   title.textContent = "Type: " + activeButton;
 });
 
 fetchData("posts");
-highlightButton(postsBtn);
+highlightButton(postsId);
